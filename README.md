@@ -1,10 +1,139 @@
-# [Go语言圣经（中文版）](https://gopl-zh.github.io/#go%E8%AF%AD%E8%A8%80%E5%9C%A3%E7%BB%8F%E4%B8%AD%E6%96%87%E7%89%88)
+# [Go语言圣经（中文版）](https://gopl-zh.github.io/#go%E8%AF%AD%E8%A8%80%E5%9C%A3%E7%BB%8F%E4%B8%AD%E6%96%87%E7%89%88)    
+    
+Go语言圣经 [《The Go Programming Language》](http://gopl.io/) 中文版本，仅供学习交流之用。对于希望学习CGO、Go汇编语言等高级用法的同学，我们推荐[《Go语言高级编程》](https://github.com/chai2010/advanced-go-programming-book)开源图书。如果希望深入学习Go语言语法树结构，可以参考[《Go语法树入门——开启自制编程语言和编译器之旅》](https://github.com/chai2010/go-ast-book)。如果想从头实现一个玩具Go语言可以参考[《从头实现µGo语言》](https://github.com/wa-lang/ugo-compiler-book)（µGo 是 [凹语言](https://wa-lang.org/) 阶段的产物）。    
+    
+    
+    
+https://gopl-zh.github.io/    
+    
+    
+https://github.com/golang-china/gopl-zh    
+    
+    
+## 目录    
+Go语言圣经    
+译者序    
+前言    
+1. 入门    
+   1.1. Hello, World    
+   1.2. 命令行参数    
+   1.3. 查找重复的行    
+   1.4. GIF动画    
+   1.5. 获取URL    
+   1.6. 并发获取多个URL    
+   1.7. Web服务    
+   1.8. 本章要点    
+2. 程序结构    
+   2.1. 命名    
+   2.2. 声明    
+   2.3. 变量    
+   2.4. 赋值    
+   2.5. 类型    
+   2.6. 包和文件    
+   2.7. 作用域    
+3. 基础数据类型    
+   3.1. 整型    
+   3.2. 浮点数    
+   3.3. 复数    
+   3.4. 布尔型    
+   3.5. 字符串    
+   3.6. 常量    
+4. 复合数据类型    
+   4.1. 数组    
+   4.2. Slice    
+   4.3. Map    
+   4.4. 结构体    
+   4.5. JSON    
+   4.6. 文本和HTML模板    
+5. 函数    
+   5.1. 函数声明    
+   5.2. 递归    
+   5.3. 多返回值    
+   5.4. 错误    
+   5.5. 函数值    
+   5.6. 匿名函数    
+   5.7. 可变参数    
+   5.8. Deferred函数    
+   5.9. Panic异常    
+   5.10. Recover捕获异常    
+6. 方法    
+   6.1. 方法声明    
+   6.2. 基于指针对象的方法    
+   6.3. 通过嵌入结构体来扩展类型    
+   6.4. 方法值和方法表达式    
+   6.5. 示例: Bit数组    
+   6.6. 封装    
+7. 接口    
+   7.1. 接口是合约    
+   7.2. 接口类型    
+   7.3. 实现接口的条件    
+   7.4. flag.Value接口    
+   7.5. 接口值    
+   7.6. sort.Interface接口    
+   7.7. http.Handler接口    
+   7.8. error接口    
+   7.9. 示例: 表达式求值    
+   7.10. 类型断言    
+   7.11. 基于类型断言识别错误类型    
+   7.12. 通过类型断言查询接口    
+   7.13. 类型分支    
+   7.14. 示例: 基于标记的XML解码    
+   7.15. 补充几点    
+8. Goroutines和Channels    
+   8.1. Goroutines    
+   8.2. 示例: 并发的Clock服务    
+   8.3. 示例: 并发的Echo服务    
+   8.4. Channels    
+   8.5. 并发的循环    
+   8.6. 示例: 并发的Web爬虫    
+   8.7. 基于select的多路复用    
+   8.8. 示例: 并发的目录遍历    
+   8.9. 并发的退出    
+   8.10. 示例: 聊天服务    
+9. 基于共享变量的并发    
+   9.1. 竞争条件    
+   9.2. sync.Mutex互斥锁    
+   9.3. sync.RWMutex读写锁    
+   9.4. 内存同步    
+   9.5. sync.Once惰性初始化    
+   9.6. 竞争条件检测    
+   9.7. 示例: 并发的非阻塞缓存    
+   9.8. Goroutines和线程    
+10. 包和工具    
+    10.1. 包简介    
+    10.2. 导入路径    
+    10.3. 包声明    
+    10.4. 导入声明    
+    10.5. 包的匿名导入    
+    10.6. 包和命名    
+    10.7. 工具    
+11. 测试    
+    11.1. go test    
+    11.2. 测试函数    
+    11.3. 测试覆盖率    
+    11.4. 基准测试    
+    11.5. 剖析    
+    11.6. 示例函数    
+12. 反射    
+    12.1. 为何需要反射?    
+    12.2. reflect.Type和reflect.Value    
+    12.3. Display递归打印    
+    12.4. 示例: 编码S表达式    
+    12.5. 通过reflect.Value修改值    
+    12.6. 示例: 解码S表达式    
+    12.7. 获取结构体字段标签    
+    12.8. 显示一个类型的方法集    
+    12.9. 几点忠告    
+13. 底层编程    
+    13.1. unsafe.Sizeof, Alignof 和 Offsetof    
+    13.2. unsafe.Pointer    
+    13.3. 示例: 深度相等判断    
+    13.4. 通过cgo调用C代码    
+    13.5. 几点忠告    
+14. 附录    
+    14.1. 附录A：原文勘误    
+    14.2. 附录B：作者译者    
+    14.3. 附录C：译文授权    
+    14.4. 附录D：其它语言    
 
-Go语言圣经 [《The Go Programming Language》](http://gopl.io/) 中文版本，仅供学习交流之用。对于希望学习CGO、Go汇编语言等高级用法的同学，我们推荐[《Go语言高级编程》](https://github.com/chai2010/advanced-go-programming-book)开源图书。如果希望深入学习Go语言语法树结构，可以参考[《Go语法树入门——开启自制编程语言和编译器之旅》](https://github.com/chai2010/go-ast-book)。如果想从头实现一个玩具Go语言可以参考[《从头实现µGo语言》](https://github.com/wa-lang/ugo-compiler-book)（µGo 是 [凹语言](https://wa-lang.org/) 阶段的产物）。
 
-
-
-https://gopl-zh.github.io/
-
-
-https://github.com/golang-china/gopl-zh
